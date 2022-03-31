@@ -1,11 +1,11 @@
-import { IMockedResponse } from './search-item.model';
+import { ISearchItem } from './search-item.model';
 
-export interface ISearchItem {
+export interface ISearchResponse {
   kind: string,
   etag: string,
   pageInfo: {
     totalResults: number,
     resultsPerPage: number,
   },
-  items: IMockedResponse[],
+  items: ISearchItem[],
 }

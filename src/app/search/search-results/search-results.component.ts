@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMockedResponse } from '../search-item.model';
+import { ISearchResponse } from '../search-response.model';
 
 @Component({
   selector: 'app-search-results',
@@ -7,7 +7,7 @@ import { IMockedResponse } from '../search-item.model';
   styleUrls: ['./search-results.component.scss'],
 })
 export default class SearchResultsComponent implements OnInit {
-  response?: IMockedResponse;
+  response?: ISearchResponse;
 
   constructor() { }
 

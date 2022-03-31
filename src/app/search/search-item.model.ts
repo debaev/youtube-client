@@ -1,4 +1,4 @@
-export interface IMockedResponse {
+export interface ISearchItem {
   kind: string,
   etag: string,
   id: string,
