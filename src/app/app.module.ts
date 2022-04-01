@@ -8,6 +8,7 @@ import HeaderComponent from './header/header/header.component';
 import SearchResultsComponent from './search/search-results/search-results.component';
 import SearchItemComponent from './search/search-item/search-item.component';
 import MaterialModule from './material/material.module';
+import { LoginComponent } from './header/header/login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import MaterialModule from './material/material.module';
     HeaderComponent,
     SearchResultsComponent,
     SearchItemComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

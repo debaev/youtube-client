@@ -1,0 +1,19 @@
+:host {
+  text-align: right;
+  width: 25%;
+}
+
+
+.icon {
+  background: rgb(86, 148, 255);
+  margin-left: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.icon .mat-icon {
+  color: white;
+}
