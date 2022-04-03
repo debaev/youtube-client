@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 5px 0;
 }
 
 .logo {
@@ -19,7 +20,7 @@
   width: 30px;
   height: 30px;
   font-size: 50px;
-  color: #4086ff;
+  color: #479dff;
   background: white;
 }
 
@@ -28,17 +29,18 @@
   align-items: center !important;
 }
 
-.search-input-close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: none;
-  background: none;
-}
-
 .search-form-input {
   background: rgba(236, 236, 236, 0.535);
   height: 35px;
+  padding-left: 10px;
+}
+
+.search-input-clear {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  border: none;
+  background: none;
 }
 
 .form-field {
@@ -47,23 +49,27 @@
 
 .search-button {
   color: white;
-  background: rgb(71, 157, 255);
+  background: #479dff;
   border: none;
   padding: 0px 15px;
   margin-right: 20px;
 }
 
 .settings-btn {
-  background: rgb(52, 170, 255);
+  background: #479dff;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  padding: 0;
 }
 
 .settings-btn .mat-icon {
   color: white;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .sort-container {
