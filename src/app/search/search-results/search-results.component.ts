@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ISearchResponse } from '../search-response.model';
+// import response from '../../../routube-response/youtube-response';
 
 @Component({
   selector: 'app-search-results',
@@ -7,7 +8,11 @@ import { ISearchResponse } from '../search-response.model';
   styleUrls: ['./search-results.component.scss'],
 })
 export default class SearchResultsComponent implements OnInit {
-  response?: ISearchResponse;
+  @Input()
+    displayedVideos?: ISearchResponse['items'];
+
+  @Input()
+    isCardsShown?: boolean;
 
   constructor() { }
 

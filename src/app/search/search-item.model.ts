@@ -16,7 +16,7 @@ interface ISnippets {
   tags: string[],
   categoryId: string,
   liveBroadcastContent: string,
-  defaultLanguage: string,
+  defaultLanguage?: string,
   localized: {
     title: string,
     description: string

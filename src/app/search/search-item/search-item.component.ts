@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ISearchItem } from '../search-item.model';
 
 @Component({
   selector: 'app-search-item',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-item.component.scss'],
 })
 export default class SearchItemComponent implements OnInit {
+  @Input()
+    videoList?: ISearchItem[];
+
+  @Input()
+    isCardShown?: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,1 +1,2 @@
-<app-header></app-header>
+<app-header (showVideos)="onShowVideos()"></app-header>
+<app-search-results [displayedVideos]="allResponse" [isCardsShown]="isContentShown"></app-search-results>
