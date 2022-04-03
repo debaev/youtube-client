@@ -7,21 +7,24 @@
       <form class="search-form">
         <mat-form-field class="form-field">
           <mat-label>Enter the title</mat-label>
-          <input class="search-form-input" matInput
-          (input)="onSearchInput($event)"
-          [value]="searchInputValue"
+          <input
+            class="search-form-input"
+            matInput
+            autocomplete="off"
+            (input)="onSearchInput($event)"
+            [value]="searchInputValue"
           />
           <ng-container *ngIf="searchInputValue.length">
             <button
-            (click)="cleanSearchField()"
-            class="search-input-close"
-            type="button"
-            matSuffix
-            mat-icon-button
-            aria-label="Clear-search-input"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
+              (click)="cleanSearchField()"
+              class="search-input-close"
+              type="button"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear-search-input"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
           </ng-container>
         </mat-form-field>
         <button
@@ -50,7 +53,11 @@
         <a href="#" class="sort-by-date">date</a>
         <a href="#" class="sort-by-date">count of view</a>
         <span>by word or sentence</span>
-        <input type="text" />
+        <input
+          type="text"
+          (input)="onFilterInput($event)"
+          [value]="filterInputValue"
+        />
       </div>
     </div>
   </ng-container>
