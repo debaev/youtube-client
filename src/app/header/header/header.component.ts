@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component, EventEmitter, OnInit, Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +16,6 @@ export default class HeaderComponent implements OnInit {
     if (this.searchInputValue) {
       this.searchInputValue = '';
     }
-    console.log('123');
   }
 
   isInputFilled = this.searchInputValue.length;
@@ -22,6 +23,13 @@ export default class HeaderComponent implements OnInit {
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement;
     this.searchInputValue = target.value;
+  }
+
+  @Output()
+    showVideos = new EventEmitter();
+
+  onSearchSubmit() {
+    this.showVideos.emit();
   }
 
   constructor() { }
