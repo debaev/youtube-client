@@ -1,7 +1,7 @@
 <div class="container mt-4" *ngIf="isCardShown">
   <div class="row">
     <div class="col-3 mb-4" *ngFor="let item of videoList | filter:filterByWord | sort:selectedSortCards">
-      <div class="card-wrapper">
+      <div class="card-wrapper" [appBorderColor]="item.snippet['publishedAt']">
         <img
           class="w-100"
           src="{{ item.snippet.thumbnails.medium.url }}"
@@ -16,7 +16,6 @@
         <h2 class="card-title text-center mt-4">{{item.snippet.title}}</h2>
         <button class="more-btn" mat-raised-button color="primary">More</button>
       </div>
-      <div class="time-status"></div>
     </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ import MaterialModule from './material/material.module';
 import { LoginComponent } from './header/header/login/login.component';
 import FilterPipe from './search/pipe/filter.pipe';
 import SortPipe from './search/pipe/sort.pipe';
+import BorderColorDirective from './search/directive/border-color.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import SortPipe from './search/pipe/sort.pipe';
     LoginComponent,
     FilterPipe,
     SortPipe,
+    BorderColorDirective,
   ],
   imports: [
     BrowserModule,
