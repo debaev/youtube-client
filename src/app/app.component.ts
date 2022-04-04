@@ -16,11 +16,17 @@ export default class AppComponent {
 
   filteredTitle: string = '';
 
+  sortedOption = '';
+
   onShowVideos() {
     this.isContentShown = true;
   }
 
   onFilterVideos(text: string) {
     this.filteredTitle = text;
+  }
+
+  onSelectSortOption(text: string) {
+    this.sortedOption = text;
   }
 }

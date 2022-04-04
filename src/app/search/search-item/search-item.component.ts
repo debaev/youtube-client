@@ -16,6 +16,9 @@ export default class SearchItemComponent implements OnInit {
   @Input()
     filterByWord!: string;
 
+  @Input()
+    selectedSortCards!: string;
+
   constructor() { }
 
   ngOnInit(): void {

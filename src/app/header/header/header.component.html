@@ -50,8 +50,22 @@
     <div class="sort-container container">
       <div class="w-50 mx-auto sort-container">
         sorting by:
-        <a href="#" class="sort-by-date">date</a>
-        <a href="#" class="sort-by-date">count of view</a>
+        <a href="#" (click)="onDateSort()" class="sort-by-date">date
+           <ng-container *ngIf="isDateSortActive">
+            <div *ngIf="isSortAscending; else: sortDateElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
+            <ng-template #sortDateElseCase>
+              <mat-icon>arrow_drop_up</mat-icon>
+            </ng-template>
+           </ng-container>
+        </a>
+        <a href="#" (click)="onCountSort()" class="sort-by-date">count of view
+          <ng-container *ngIf="isCountSortActive">
+            <div *ngIf="isCountAscending; else: sortCountElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
+            <ng-template #sortCountElseCase>
+              <mat-icon>arrow_drop_up</mat-icon>
+            </ng-template>
+          </ng-container>
+        </a>
         <span>by word or sentence</span>
         <input
           type="text"

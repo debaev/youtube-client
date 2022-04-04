@@ -1,6 +1,6 @@
 <div class="container mt-4" *ngIf="isCardShown">
   <div class="row">
-    <div class="col-3 mb-4" *ngFor="let item of videoList | filter:filterByWord">
+    <div class="col-3 mb-4" *ngFor="let item of videoList | filter:filterByWord | sort:selectedSortCards">
       <div class="card-wrapper">
         <img
           class="w-100"

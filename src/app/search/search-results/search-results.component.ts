@@ -17,6 +17,9 @@ export default class SearchResultsComponent implements OnInit {
   @Input()
     filteredInputValue!: string;
 
+  @Input()
+    selectedSortValue!: string;
+
   constructor() { }
 
   ngOnInit(): void {
