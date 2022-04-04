@@ -1,5 +1,5 @@
 import {
-  Component, EventEmitter, Input, OnInit, Output,
+  Component, EventEmitter, OnInit, Output,
 } from '@angular/core';
 
 @Component({
@@ -12,14 +12,6 @@ export default class HeaderComponent implements OnInit {
 
   searchInputValue: string = '';
 
-  cleanSearchField() {
-    if (this.searchInputValue) {
-      this.searchInputValue = '';
-    }
-  }
-
-  isInputFilled = this.searchInputValue.length;
-
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement;
     this.searchInputValue = target.value;
@@ -30,6 +22,20 @@ export default class HeaderComponent implements OnInit {
 
   onSearchSubmit() {
     this.showVideos.emit();
+  }
+
+  @Output()
+    filterInputValue = new EventEmitter<string>();
+
+  onFilterInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.filterInputValue.emit(target.value);
+  }
+
+  cleanSearchField() {
+    if (this.searchInputValue) {
+      this.searchInputValue = '';
+    }
   }
 
   constructor() { }

@@ -1,5 +1,9 @@
-<app-header (showVideos)="onShowVideos()"></app-header>
+<app-header
+  (showVideos)="onShowVideos()"
+  (filterInputValue)="onFilterVideos($event)"
+></app-header>
 <app-search-results
   [allDisplayedVideos]="allResponse"
   [isCardsShown]="isContentShown"
+  [filteredInputValue]="filteredTitle"
 ></app-search-results>

@@ -9,10 +9,13 @@ import { ISearchResponse } from '../search-response.model';
 })
 export default class SearchResultsComponent implements OnInit {
   @Input()
-    allDisplayedVideos?: ISearchResponse['items'];
+    allDisplayedVideos!: ISearchResponse['items'];
 
   @Input()
     isCardsShown?: boolean;
+
+  @Input()
+    filteredInputValue!: string;
 
   constructor() { }
 

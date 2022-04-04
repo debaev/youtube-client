@@ -10,11 +10,17 @@ import response from '../routube-response/youtube-response';
 export default class AppComponent {
   title = 'YouTube';
 
+  allResponse: ISearchResponse['items'] = response.items;
+
   isContentShown = false;
 
-  allResponse: ISearchResponse['items'] = response.items;
+  filteredTitle: string = '';
 
   onShowVideos() {
     this.isContentShown = true;
+  }
+
+  onFilterVideos(text: string) {
+    this.filteredTitle = text;
   }
 }

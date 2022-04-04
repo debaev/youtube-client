@@ -9,6 +9,8 @@ import SearchResultsComponent from './search/search-results/search-results.compo
 import SearchItemComponent from './search/search-item/search-item.component';
 import MaterialModule from './material/material.module';
 import { LoginComponent } from './header/header/login/login.component';
+import FilterPipe from './search/pipe/filter.pipe';
+import SortPipe from './search/pipe/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { LoginComponent } from './header/header/login/login.component';
     SearchResultsComponent,
     SearchItemComponent,
     LoginComponent,
+    FilterPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule,

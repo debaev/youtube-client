@@ -5,6 +5,17 @@
   border-radius: 5px;
 }
 
+.card-title {
+  height: 50px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.video-statistics button {
+  border: none;
+  padding: 0;
+}
+
 .time-status {
   margin-top: -3px;
   height: 5px;
@@ -19,9 +30,4 @@
   display: block;
   margin: 40px auto 0;
   background: rgb(61, 155, 222);
-}
-
-.video-statistics button {
-  border: none;
-  padding: 0;
 }
