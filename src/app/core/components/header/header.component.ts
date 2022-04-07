@@ -45,7 +45,7 @@ export default class HeaderComponent implements OnInit {
   }
 
   onDateSort() {
-    this.isSortAscending ? this.selectedSortValue = 'date-ascending' : this.selectedSortValue = 'date-descending';
+    // this.isSortAscending ? this.selectedSortValue = 'date-ascending' : this.selectedSortValue = 'date-descending';
     this.isSortAscending = !this.isSortAscending;
     this.isDateSortActive = true;
     this.isCountSortActive = false;
@@ -53,7 +53,7 @@ export default class HeaderComponent implements OnInit {
   }
 
   onCountSort() {
-    this.isCountAscending ? this.selectedSortValue = 'count-ascending' : this.selectedSortValue = 'count-descending';
+    // this.isCountAscending ? this.selectedSortValue = 'count-ascending' : this.selectedSortValue = 'count-descending';
     this.isCountAscending = !this.isCountAscending;
     this.isCountSortActive = true;
     this.isDateSortActive = false;
