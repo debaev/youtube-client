@@ -8,16 +8,16 @@ import { ISearchItem } from '../../models/search-item.model';
 })
 export default class SearchItemComponent implements OnInit {
   @Input()
-    videoList!: ISearchItem[];
+    allVideos!: ISearchItem[];
 
-  @Input()
-    isCardShown?: boolean = false;
+  // @Input()
+  //   isCardShown?: boolean = false;
 
-  @Input()
-    filterByWord!: string;
+  // @Input()
+  //   filterByWord!: string;
 
-  @Input()
-    selectedSortCards!: string;
+  // @Input()
+  //   selectedSortCards!: string;
 
   constructor() { }
 

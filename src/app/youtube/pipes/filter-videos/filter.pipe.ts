@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import { Pipe, PipeTransform } from '@angular/core';
-import { ISearchItem } from '../search-item.model';
+import { ISearchItem } from '../../models/search-item.model';
 
 @Pipe({
   name: 'filter',

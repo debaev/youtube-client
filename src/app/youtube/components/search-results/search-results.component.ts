@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ISearchResponse } from '../search-response.model';
+import { Component, OnInit } from '@angular/core';
 // import response from '../../../routube-response/youtube-response';
+import YoutubeResponseService from '../../services/youtube-response.service';
+import { ISearchItem } from '../../models/search-item.model';
 
 @Component({
   selector: 'app-search-results',
@@ -8,20 +9,28 @@ import { ISearchResponse } from '../search-response.model';
   styleUrls: ['./search-results.component.scss'],
 })
 export default class SearchResultsComponent implements OnInit {
-  @Input()
-    allDisplayedVideos!: ISearchResponse['items'];
+  constructor(private youtubeResponseService: YoutubeResponseService) { }
 
-  @Input()
-    isCardsShown?: boolean;
-
-  @Input()
-    filteredInputValue!: string;
-
-  @Input()
-    selectedSortValue!: string;
-
-  constructor() { }
+  videos: ISearchItem[] = [];
 
   ngOnInit(): void {
+    this.getVideos();
   }
+
+  getVideos(): void {
+    this.youtubeResponseService.getVideos()
+      // eslint-disable-next-line no-return-assign
+      .subscribe((videos) => this.videos = videos);
+  }
+  // @Input()
+  //   allDisplayedVideos!: ISearchResponse['items'];
+
+  // @Input()
+  //   isCardsShown?: boolean;
+
+  // @Input()
+  //   filteredInputValue!: string;
+
+  // @Input()
+  //   selectedSortValue!: string;
 }
