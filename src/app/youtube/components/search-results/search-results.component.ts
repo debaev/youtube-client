@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import response from '../../../routube-response/youtube-response';
-import YoutubeResponseService from '../../services/youtube-response.service';
+import { YoutubeResponseService } from '../../services/youtube-response.service';
 import { ISearchItem } from '../../models/search-item.model';
 
 @Component({

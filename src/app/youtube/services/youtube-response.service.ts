@@ -6,11 +6,16 @@ import response from '../../../youtube-response/youtube-response';
 @Injectable({
   providedIn: 'root',
 })
-export default class YoutubeResponseService {
+export class YoutubeResponseService {
   constructor() { }
 
   getVideos(): Observable<ISearchItem[]> {
     const videos = of(response.items);
     return videos;
+  }
+
+  getVideo(id: string): ISearchItem {
+    const video = response.items.find((item) => item.id === id)!;
+    return video;
   }
 }

@@ -1,15 +1,20 @@
-.card-wrapper {
-  background: rgb(239, 239, 239);
-  padding: 20px 20px 15px;
-  box-shadow: 3px 2px 5px #d0d0d0;
-  border-radius: 5px;
-  border-bottom: 5px solid red;
-}
+.card {
+  &-wrapper {
+    background: rgb(239, 239, 239);
+    padding: 20px 20px 15px;
+    box-shadow: 3px 2px 5px #d0d0d0;
+    border-radius: 5px;
+    border-bottom: 5px solid red;
+    & a {
+      text-decoration: none;
+    }
+  }
 
-.card-title {
-  height: 50px;
-  font-size: 16px;
-  line-height: 20px;
+  &-title {
+    height: 50px;
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .video-statistics button {

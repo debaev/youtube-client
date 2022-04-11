@@ -1,1 +1,29 @@
-<p>detailed-information-page works!</p>
+<ng-container *ngIf="videoDetail">
+  <div class="container mt-5">
+    <div class="detail__container">
+      <button class="detail__back" type="button" (click)="goBack()">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <div class="detail__view col-6">
+        <img
+          src="{{ videoDetail.snippet.thumbnails.maxres.url }}"
+          alt=""
+          class="w-100"
+        />
+      </div>
+      <div class="detail-info" [appBorderColor]="videoDetail.snippet.publishedAt">
+        <div class="detail__title">
+          <h4>{{videoDetail.snippet.channelTitle}}</h4>
+          <p>{{videoDetail.snippet.publishedAt | localDate}}</p>
+        </div>
+        <p class="detail__desc" ><span style="display: block; font-weight: bold;">Description:</span>{{videoDetail.snippet.description}}</p>
+        <div class="detail-statistcs">
+          <button><mat-icon>visibility</mat-icon>{{videoDetail.statistics.viewCount}}</button>
+          <button><mat-icon>favorite</mat-icon>{{videoDetail.statistics.favoriteCount}}</button>
+          <button><mat-icon>favorite_border</mat-icon>{{videoDetail.statistics.dislikeCount}}</button>
+          <button><mat-icon>forum</mat-icon>{{videoDetail.statistics.commentCount}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

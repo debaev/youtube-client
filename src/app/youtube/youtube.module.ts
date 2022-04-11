@@ -8,6 +8,8 @@ import FilterPipe from './pipes/filter-videos/filter.pipe';
 import BorderColorDirective from './directives/border-colorizer/border-color.directive';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { DetailedInformationPageComponent } from './pages/detailed-information-page/detailed-information-page.component';
+import { YoutubeRoutingModule } from './youtube-routing.module';
+import { LocalDatePipe } from './pipes/local-date/local-date.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { DetailedInformationPageComponent } from './pages/detailed-information-p
     BorderColorDirective,
     MainPageComponent,
     DetailedInformationPageComponent,
+    LocalDatePipe,
   ],
   exports: [
     SearchItemComponent,
@@ -27,6 +30,7 @@ import { DetailedInformationPageComponent } from './pages/detailed-information-p
   imports: [
     CommonModule,
     MaterialModule,
+    YoutubeRoutingModule,
   ],
 })
-export default class YoutubeModule { }
+export class YoutubeModule { }

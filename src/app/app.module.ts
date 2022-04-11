@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import YoutubeModule from './youtube/youtube.module';
 
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
@@ -21,7 +20,6 @@ import CoreModule from './core/core.module';
     BrowserAnimationsModule,
     MaterialModule,
     CoreModule,
-    YoutubeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

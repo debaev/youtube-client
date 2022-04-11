@@ -13,7 +13,8 @@
         <button><mat-icon>forum</mat-icon></button>{{item.statistics.commentCount}}
       </div>
       <h2 class="card-title text-center mt-4">{{item.snippet.title}}</h2>
-      <button class="more-btn" mat-raised-button color="primary">More</button>
+      <a routerLink="detail/{{item.id}}">
+        <button class="more-btn" mat-raised-button color="primary">More</button></a>
     </div>
   </div>
 </div>
