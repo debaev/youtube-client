@@ -5,6 +5,7 @@
     box-shadow: 3px 2px 5px #d0d0d0;
     border-radius: 5px;
     border-bottom: 5px solid red;
+
     & a {
       text-decoration: none;
     }
@@ -17,9 +18,24 @@
   }
 }
 
-.video-statistics button {
-  border: none;
-  padding: 0;
+.video-statistics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto auto 0;
+
+  & button {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  & .mat-icon {
+    font-size: 17px;
+  }
 }
 
 .more-btn {

@@ -7,10 +7,10 @@
         alt=""
       />
       <div class="video-statistics d-flex align-items-center justify-content-between mt-3">
-        <button><mat-icon>visibility</mat-icon></button>{{item.statistics.viewCount}}
-        <button><mat-icon>favorite</mat-icon></button>{{item.statistics.favoriteCount}}
-        <button><mat-icon>favorite_border</mat-icon></button>{{item.statistics.dislikeCount}}
-        <button><mat-icon>forum</mat-icon></button>{{item.statistics.commentCount}}
+        <button><mat-icon>visibility</mat-icon>{{item.statistics.viewCount}}</button>
+        <button><mat-icon>favorite</mat-icon>{{item.statistics.favoriteCount}}</button>
+        <button><mat-icon>favorite_border</mat-icon>{{item.statistics.dislikeCount}}</button>
+        <button><mat-icon>forum</mat-icon>{{item.statistics.commentCount}}</button>
       </div>
       <h2 class="card-title text-center mt-4">{{item.snippet.title}}</h2>
       <a routerLink="detail/{{item.id}}">
