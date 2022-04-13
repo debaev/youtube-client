@@ -4,10 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
-import MaterialModule from './material/material.module';
-// import FilterPipe from './search/pipe/filter.pipe';
-// import SortPipe from './search/pipe/sort.pipe';
-// import BorderColorDirective from './search/directive/border-color.directive';
 import CoreModule from './core/core.module';
 
 @NgModule({
@@ -18,7 +14,6 @@ import CoreModule from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     CoreModule,
   ],
   providers: [],
