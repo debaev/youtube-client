@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import SortFilterService from 'src/app/core/services/sort-filter.service';
 import { ISearchItem } from '../../models/search-item.model';
 import { YoutubeResponseService } from '../../services/youtube-response.service';
 
@@ -15,6 +16,7 @@ export class DetailedInformationPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private videoService: YoutubeResponseService,
+    private sortService: SortFilterService,
     private location: Location,
   ) {}
 

@@ -16,7 +16,7 @@ export default class BorderColorDirective implements OnChanges {
     const diffInDay = (now - publishedDate) / (1000 * 3600 * 24);
     // const diffInMonth = (now - publishedDate) / (1000 * 3600 * 24 * 30);
     if (diffInDay < 7) {
-      this.renderer.setStyle(this.elRef.nativeElement, 'border-color', 'blue');
+      this.renderer.setStyle(this.elRef.nativeElement, 'border-color', '#479dff');
     } else if (diffInDay < 30) {
       this.renderer.setStyle(this.elRef.nativeElement, 'border-color', 'green');
     } else if (diffInDay > 180) {

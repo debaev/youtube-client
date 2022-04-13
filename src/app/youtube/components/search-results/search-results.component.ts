@@ -22,15 +22,4 @@ export default class SearchResultsComponent implements OnInit {
       // eslint-disable-next-line no-return-assign
       .subscribe((videos) => this.videos = videos);
   }
-  // @Input()
-  //   allDisplayedVideos!: ISearchResponse['items'];
-
-  // @Input()
-  //   isCardsShown?: boolean;
-
-  // @Input()
-  //   filteredInputValue!: string;
-
-  // @Input()
-  //   selectedSortValue!: string;
 }

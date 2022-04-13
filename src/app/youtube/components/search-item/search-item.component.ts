@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import SortFilterService from 'src/app/core/services/sort-filter.service';
 import { ISearchItem } from '../../models/search-item.model';
 
 @Component({
@@ -10,17 +11,7 @@ export default class SearchItemComponent implements OnInit {
   @Input()
     allVideos!: ISearchItem[];
 
-  // @Input()
-  //   isCardShown?: boolean = false;
-
-  // @Input()
-  //   filterByWord!: string;
-
-  // @Input()
-  //   selectedSortCards!: string;
-
-  constructor() { }
-
+  constructor(public sortService: SortFilterService) { }
   ngOnInit(): void {
   }
 }
