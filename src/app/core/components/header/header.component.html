@@ -28,7 +28,6 @@
           </ng-container>
         </mat-form-field>
         <button
-          (click)="onSearchSubmit()"
           class="search-button"
           type="button"
           mat-button
@@ -52,7 +51,7 @@
         sorting by:
         <button (click)="onDateSort()" class="sort-by-date">date
            <ng-container *ngIf="isDateSortActive">
-            <div *ngIf="isSortAscending; else: sortDateElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
+            <div *ngIf="this.sortService.isSortAscending; else: sortDateElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
             <ng-template #sortDateElseCase>
               <mat-icon>arrow_drop_up</mat-icon>
             </ng-template>
@@ -60,7 +59,7 @@
         </button>
         <button (click)="onCountSort()" class="sort-by-date">count of view
           <ng-container *ngIf="isCountSortActive">
-            <div *ngIf="isCountAscending; else: sortCountElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
+            <div *ngIf="this.sortService.isSortAscending; else: sortCountElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
             <ng-template #sortCountElseCase>
               <mat-icon>arrow_drop_up</mat-icon>
             </ng-template>

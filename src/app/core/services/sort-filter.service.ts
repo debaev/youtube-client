@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export default class SortFilterService {
   sortInputValue = '';
 
+  sortInputType = '';
+
+  isSortAscending = true;
+
   setSortValue(value: string) {
     this.sortInputValue = value;
   }
