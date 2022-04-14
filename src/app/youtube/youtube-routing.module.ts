@@ -4,14 +4,8 @@ import { DetailedInformationPageComponent } from './pages/detailed-information-p
 import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: MainPageComponent,
-  },
-  {
-    path: 'detail/:id',
-    component: DetailedInformationPageComponent,
-  },
+  { path: '', component: MainPageComponent },
+  { path: 'detail/:id', component: DetailedInformationPageComponent },
 ];
 
 @NgModule({
