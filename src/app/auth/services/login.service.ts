@@ -10,11 +10,14 @@ export class LoginService {
 
   isLogged: boolean = false;
 
+  userName = 'Your Name';
+
   login(user: IUser) {
     localStorage.setItem('username', user.login);
     localStorage.setItem('token', user.pass);
     this.isLogged = true;
     this.navigateToMainPage();
+    this.userName = user.login;
   }
 
   logout() {
@@ -22,6 +25,7 @@ export class LoginService {
     localStorage.removeItem('token');
     this.isLogged = false;
     this.navigateToLoginPage();
+    this.userName = 'Your Name';
   }
 
   navigateToMainPage() {
