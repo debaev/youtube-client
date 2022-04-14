@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import response from '../../../routube-response/youtube-response';
+import { LoginService } from 'src/app/auth/services/login.service';
 import { YoutubeResponseService } from '../../services/youtube-response.service';
 import { ISearchItem } from '../../models/search-item.model';
 
@@ -9,7 +10,10 @@ import { ISearchItem } from '../../models/search-item.model';
   styleUrls: ['./search-results.component.scss'],
 })
 export default class SearchResultsComponent implements OnInit {
-  constructor(private youtubeResponseService: YoutubeResponseService) { }
+  constructor(
+    public youtubeResponseService: YoutubeResponseService,
+    private loginService: LoginService,
+  ) {}
 
   videos: ISearchItem[] = [];
 
@@ -18,8 +22,9 @@ export default class SearchResultsComponent implements OnInit {
   }
 
   getVideos(): void {
-    this.youtubeResponseService.getVideos()
+    this.youtubeResponseService
+      .getVideos()
       // eslint-disable-next-line no-return-assign
-      .subscribe((videos) => this.videos = videos);
+      .subscribe((videos) => (this.videos = videos));
   }
 }

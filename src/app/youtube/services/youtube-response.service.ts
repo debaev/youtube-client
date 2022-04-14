@@ -7,7 +7,7 @@ import response from '../../shared/youtube-response/youtube-response';
   providedIn: 'root',
 })
 export class YoutubeResponseService {
-  constructor() { }
+  isVideosShown = false;
 
   getVideos(): Observable<ISearchItem[]> {
     const videos = of(response.items);
