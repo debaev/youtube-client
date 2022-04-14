@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import response from '../routube-response/youtube-response';
-// import { ISearchResponse } from './youtube/models/search-response.model';
 
 @Component({
   selector: 'app-root',
@@ -9,24 +7,4 @@ import { Component } from '@angular/core';
 })
 export default class AppComponent {
   title = 'YouTube';
-
-  // allResponse: ISearchResponse['items'] = response.items;
-
-  // isContentShown = false;
-
-  // filteredTitle: string = '';
-
-  // sortedOption = '';
-
-  // onShowVideos() {
-  //   this.isContentShown = true;
-  // }
-
-  // onFilterVideos(text: string) {
-  //   this.filteredTitle = text;
-  // }
-
-  // onSelectSortOption(text: string) {
-  //   this.sortedOption = text;
-  // }
 }
