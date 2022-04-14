@@ -10,6 +10,8 @@ import { DetailedInformationPageComponent } from './pages/detailed-information-p
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { LocalDatePipe } from './pipes/local-date/local-date.pipe';
 import { SharedModule } from '../shared/shared.module';
+import { ButtonBgDirective } from './directives/button-bg/button-bg.directive';
+import { BoxShadowDirective } from './directives/box-shadow/box-shadow.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { SharedModule } from '../shared/shared.module';
     MainPageComponent,
     DetailedInformationPageComponent,
     LocalDatePipe,
+    ButtonBgDirective,
+    BoxShadowDirective,
   ],
   exports: [
     SearchItemComponent,
