@@ -1,0 +1,33 @@
+.login-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: rgba(229, 228, 228, 0.535);
+  margin: 70px auto 0;
+  color: #878787;
+  border-radius: 5px;
+  & h2 {
+    color: #000;
+    font-weight: bold;
+  }
+  & input {
+    background: rgba(215, 215, 215, 0.535);
+    padding-left: 20px;
+    height: 40px;
+    color: #000;
+    border: none;
+    outline: none;
+    margin: 5px 0 10px;
+  }
+  & button {
+    align-self: flex-end;
+    margin-top: 20px;
+    width: 135px;
+    height: 35px;
+    background: #479dff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+}
