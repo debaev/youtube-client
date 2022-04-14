@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { YoutubeResponseService } from 'src/app/youtube/services/youtube-response.service';
 import SortFilterService from '../../services/sort-filter.service';
 
 @Component({
@@ -7,7 +8,10 @@ import SortFilterService from '../../services/sort-filter.service';
   styleUrls: ['./header.component.scss'],
 })
 export default class HeaderComponent {
-  constructor(public sortService: SortFilterService) {}
+  constructor(
+    public sortService: SortFilterService,
+    private youtubeService: YoutubeResponseService,
+  ) {}
 
   isSortBlockShown: boolean = false;
 
@@ -16,6 +20,10 @@ export default class HeaderComponent {
   isDateSortActive = false;
 
   isCountSortActive = false;
+
+  onShowContent() {
+    this.youtubeService.isVideosShown = true;
+  }
 
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement;
