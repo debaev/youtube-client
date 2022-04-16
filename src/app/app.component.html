@@ -1,11 +1,2 @@
-<app-header
-  (showVideos)="onShowVideos()"
-  (filterInputValue)="onFilterVideos($event)"
-  (selectedSortOption)="onSelectSortOption($event)"
-></app-header>
-<app-search-results
-  [allDisplayedVideos]="allResponse"
-  [isCardsShown]="isContentShown"
-  [filteredInputValue]="filteredTitle"
-  [selectedSortValue]="sortedOption"
-></app-search-results>
+<app-header></app-header>
+<router-outlet></router-outlet>

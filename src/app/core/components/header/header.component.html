@@ -1,0 +1,77 @@
+<header class="header">
+  <div class="header-container container">
+    <div class="w-50 d-flex align-items-center">
+      <div class="logo">
+        <mat-icon>smart_display</mat-icon>
+      </div>
+      <form class="search-form">
+        <mat-form-field class="form-field">
+          <mat-label>Enter the title</mat-label>
+          <input
+            class="search-form-input"
+            matInput
+            autocomplete="off"
+            (input)="onSearchInput($event)"
+            [value]="searchInputValue"
+          />
+          <ng-container *ngIf="searchInputValue.length">
+            <button
+              (click)="cleanSearchField()"
+              class="search-input-clear"
+              type="button"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear-search-input"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </ng-container>
+        </mat-form-field>
+        <button
+          class="search-button"
+          type="button"
+          mat-button
+          aria-label="request-search-result"
+          (click)="onShowContent()"
+        >
+          search
+        </button>
+      </form>
+      <button
+        (click)="isSortBlockShown = !isSortBlockShown"
+        class="settings-btn"
+      >
+        <mat-icon>tune</mat-icon>
+      </button>
+    </div>
+    <app-login></app-login>
+  </div>
+  <ng-container *ngIf="isSortBlockShown">
+    <div class="sort-container container">
+      <div class="w-50 mx-auto sort-container">
+        sorting by:
+        <button (click)="onDateSort()" class="sort-by-date">date
+           <ng-container *ngIf="isDateSortActive">
+            <div *ngIf="this.sortService.isSortAscending; else: sortDateElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
+            <ng-template #sortDateElseCase>
+              <mat-icon>arrow_drop_up</mat-icon>
+            </ng-template>
+           </ng-container>
+        </button>
+        <button (click)="onCountSort()" class="sort-by-date">count of view
+          <ng-container *ngIf="isCountSortActive">
+            <div *ngIf="this.sortService.isSortAscending; else: sortCountElseCase"><mat-icon>arrow_drop_down</mat-icon></div>
+            <ng-template #sortCountElseCase>
+              <mat-icon>arrow_drop_up</mat-icon>
+            </ng-template>
+          </ng-container>
+        </button>
+        <span>by word or sentence</span>
+        <input
+          type="text"
+          (input)="onFilterInput($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+</header>

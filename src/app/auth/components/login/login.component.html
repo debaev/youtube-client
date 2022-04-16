@@ -1,0 +1,11 @@
+<form class="login-form" (ngSubmit)="onLogin()">
+  <h2>Login</h2>
+  login
+  <input type="text" [(ngModel)]="user.login" name="login" />
+  <p style="color: red;" *ngIf="!user.login && errorMsg">The username field is empty.</p>
+  password
+  <input type="password" [(ngModel)]="user.pass" name="pass" />
+  <p style="color: red;" *ngIf="!user.pass && errorMsg">The password field is empty.</p>
+  <button type="submit" mat-button>Login</button>
+</form>
+

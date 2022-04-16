@@ -1,0 +1,14 @@
+<div class="profile">
+  <span class="username">{{this.loginService.userName}}</span>
+  <div class="icon">
+    <mat-icon>account_circle</mat-icon>
+  </div>
+  <button
+    class="logout__btn"
+    *ngIf="this.loginService.isLogged"
+    mat-button
+    (click)="this.loginService.logout()"
+  >
+    Logout
+  </button>
+</div>

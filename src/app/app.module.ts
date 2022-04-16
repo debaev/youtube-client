@@ -4,31 +4,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import AppRoutingModule from './app-routing.module';
 import AppComponent from './app.component';
-import HeaderComponent from './header/header/header.component';
-import SearchResultsComponent from './search/search-results/search-results.component';
-import SearchItemComponent from './search/search-item/search-item.component';
-import MaterialModule from './material/material.module';
-import { LoginComponent } from './header/header/login/login.component';
-import FilterPipe from './search/pipe/filter.pipe';
-import SortPipe from './search/pipe/sort.pipe';
-import BorderColorDirective from './search/directive/border-color.directive';
+import CoreModule from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
-    LoginComponent,
-    FilterPipe,
-    SortPipe,
-    BorderColorDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
