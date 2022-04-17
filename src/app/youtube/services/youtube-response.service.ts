@@ -9,13 +9,15 @@ import response from '../../shared/youtube-response/youtube-response';
 export class YoutubeResponseService {
   isVideosShown = false;
 
-  static getVideos(): Observable<ISearchItem[]> {
+  getVideos(): Observable<ISearchItem[]> {
     const videos = of(response.items);
+    console.log(this);
     return videos;
   }
 
-  static getVideo(id: string): ISearchItem {
+  getVideo(id: string): ISearchItem {
     const video = response.items.find((item) => item.id === id)!;
+    console.log(this);
     return video;
   }
 }
