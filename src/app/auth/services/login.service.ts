@@ -13,11 +13,11 @@ export class LoginService {
   userName = 'Your Name';
 
   login(user: IUser) {
-    localStorage.setItem('username', user.login);
-    localStorage.setItem('token', user.pass);
+    localStorage.setItem('username', user.username);
+    localStorage.setItem('token', user.password);
     this.isLogged = true;
     this.navigateToMainPage();
-    this.userName = user.login;
+    this.userName = user.username;
   }
 
   logout() {

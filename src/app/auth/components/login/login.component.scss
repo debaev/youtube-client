@@ -19,6 +19,14 @@
     border: none;
     outline: none;
     margin: 5px 0 10px;
+    &.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+  }
+  & .error-msg {
+    margin-bottom: 10px;
+    color: red;
+    display: block;
   }
   & button {
     align-self: flex-end;
@@ -29,5 +37,23 @@
     color: #fff;
     border: none;
     border-radius: 5px;
+  }
+  & .pass_container {
+    position: relative;
+    & .password-btn {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      margin: 0;
+      padding: 0;
+      width: initial;
+      height: 22px;
+      background: none;
+      outline: none;
+      & .mat-icon {
+        font-size: 20px;
+        color: #000;
+      }
+    }
   }
 }
