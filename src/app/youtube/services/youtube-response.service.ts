@@ -11,11 +11,13 @@ export class YoutubeResponseService {
 
   getVideos(): Observable<ISearchItem[]> {
     const videos = of(response.items);
+    console.log(this);
     return videos;
   }
 
   getVideo(id: string): ISearchItem {
     const video = response.items.find((item) => item.id === id)!;
+    console.log(this);
     return video;
   }
 }

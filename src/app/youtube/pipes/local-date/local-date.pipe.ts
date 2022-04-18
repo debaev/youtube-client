@@ -11,5 +11,6 @@ export class LocalDatePipe implements PipeTransform {
       month: 'long',
       day: 'numeric',
     });
+    console.log(this);
   }
 }
