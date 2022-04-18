@@ -12,6 +12,7 @@ export default class SearchItemComponent implements OnInit {
     allVideos!: ISearchItem[];
 
   constructor(public sortService: SortFilterService) { }
+
   ngOnInit(): void {
   }
 }
