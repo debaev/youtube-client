@@ -1,1 +1,31 @@
-<p>admin works!</p>
+<form [formGroup]="newCardForm" class="login-form" (ngSubmit)="onSubmit()">
+  <h2>Create new card</h2>
+  
+  Title
+  <input formControlName="title" type="text" />
+  <span class="error-msg" *ngIf="(newCardForm.get('title')?.touched && !newCardForm.get('title')?.value) || (!isFormValid && !newCardForm.get('title')?.value)">Please enter a title</span>
+  <span class="error-msg" *ngIf="newCardForm.get('title')?.value && newCardForm.get('title')?.value?.length <= 3">The title is too short</span>
+  <span class="error-msg" *ngIf="newCardForm.get('title')?.value?.length > 20">The title is too long</span>
+  
+  Description
+  <input formControlName="description" type="text" />
+  <span class="error-msg" *ngIf="newCardForm.get('description')?.value?.length > 255">The description  is too long</span>
+  
+  Link to the image cover
+  <input formControlName="imgLink" type="text" />
+  <span class="error-msg" *ngIf="(newCardForm.get('imgLink')?.touched && !newCardForm.get('imgLink')?.value) || (!isFormValid && !newCardForm.get('imgLink')?.value)">Please enter a link to the image</span>
+  <span class="error-msg" *ngIf="(newCardForm.get('imgLink')?.value && newCardForm.controls['imgLink'].errors)">The image link is invalid</span>
+  
+  Link to the video
+  <input formControlName="videoLink" type="text" />
+  <span class="error-msg" *ngIf="(newCardForm.get('videoLink')?.touched && !newCardForm.get('videoLink')?.value) || (!isFormValid && !newCardForm.get('videoLink')?.value)">Please enter a link to the video</span>
+  <span class="error-msg" *ngIf="(newCardForm.get('videoLink')?.value && newCardForm.controls['videoLink'].errors)">The video link is invalid</span>
+  
+  Creation date
+  <input formControlName="date" type="date" value="new Date().getFullYear()" />
+  <span class="error-msg" *ngIf="(!isFormValid && !newCardForm.get('date')?.value)">Please enter a creation date</span>
+  <span class="error-msg" *ngIf="newCardForm.get('date')?.value && newCardForm.get('date')?.errors">The date is invalid</span>
+  
+  <button type="submit" mat-button>Login</button>
+  
+</form>

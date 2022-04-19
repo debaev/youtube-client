@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   isPasswordHidden = true;
 
-  getPassInputType() {
+  togglePasswordType() {
     let passType: string = 'password';
     if (this.isPasswordHidden) passType = 'password';
     else passType = 'text';
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   togglePasswordVisibility() {
     this.isPasswordHidden = !this.isPasswordHidden;
-    this.getPassInputType();
+    this.togglePasswordType();
   }
 
   ngOnInit(): void {
@@ -99,6 +99,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.status === 'INVALID') {
       this.isFormValid = false;
+      console.log(this.loginForm);
     } else {
       this.loginService.login(this.loginForm.value);
     }
