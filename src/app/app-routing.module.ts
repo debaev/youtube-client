@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
     path: 'main',
     loadChildren: () => import('./youtube/youtube.module').then((m) => m.YoutubeModule),
     canActivate: [AuthGuard],
