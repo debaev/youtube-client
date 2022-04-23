@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { YoutubeResponseService } from 'src/app/youtube/services/youtube-response.service';
 import SortFilterService from '../../services/sort-filter.service';
 
@@ -11,6 +12,7 @@ export default class HeaderComponent {
   constructor(
     public sortService: SortFilterService,
     private youtubeService: YoutubeResponseService,
+    private route: Router,
   ) {}
 
   isSortBlockShown: boolean = false;
@@ -21,12 +23,9 @@ export default class HeaderComponent {
 
   isCountSortActive = false;
 
-  onShowContent() {
-    this.youtubeService.isVideosShown = true;
-  }
-
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement;
+    this.youtubeService.searchPosts(target.value);
     this.searchInputValue = target.value;
   }
 
@@ -53,5 +52,9 @@ export default class HeaderComponent {
   onFilterInput(event: Event) {
     const target = event.target as HTMLInputElement;
     this.sortService.setSortValue(target.value);
+  }
+
+  goToAdminPage() {
+    this.route.navigate(['admin']);
   }
 }

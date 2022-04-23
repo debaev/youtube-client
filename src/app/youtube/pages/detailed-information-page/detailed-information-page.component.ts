@@ -2,7 +2,6 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import SortFilterService from 'src/app/core/services/sort-filter.service';
-import { ISearchItem } from '../../models/search-item.model';
 import { YoutubeResponseService } from '../../services/youtube-response.service';
 
 @Component({
@@ -11,11 +10,11 @@ import { YoutubeResponseService } from '../../services/youtube-response.service'
   styleUrls: ['./detailed-information-page.component.scss'],
 })
 export class DetailedInformationPageComponent implements OnInit {
-  videoDetail?: ISearchItem;
+  videoDetail?: any;
 
   constructor(
     private route: ActivatedRoute,
-    private videoService: YoutubeResponseService,
+    private youtubeResponseService: YoutubeResponseService,
     private sortService: SortFilterService,
     private location: Location,
   ) {}
@@ -24,7 +23,9 @@ export class DetailedInformationPageComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       if (id) {
-        this.videoDetail = this.videoService.getVideo(id);
+        this.youtubeResponseService.fetchVideo(id).subscribe((res) => {
+          this.videoDetail = res;
+        });
       }
     });
   }

@@ -44,8 +44,8 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   patternValidator(error: ValidationErrors): ValidatorFn {
-    console.log(this.isFormValid);
     return (control: AbstractControl) => {
       if (!control.value) {
         // if control is empty return no error

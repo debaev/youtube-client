@@ -1,4 +1,4 @@
-<div class="container mt-4" *ngIf="videos && this.youtubeResponseService.isVideosShown">
-  <app-search-item [allVideos]="videos">
+<div class="container mt-4">
+  <app-search-item [allVideos$]="fetchedVideos">
   </app-search-item>
 </div>

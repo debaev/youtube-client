@@ -64,8 +64,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {
-    console.log(this.isFormValid);
     return (control: AbstractControl) => {
       if (!control.value) {
         // if control is empty return no error
@@ -80,8 +80,8 @@ export class LoginComponent implements OnInit {
     };
   }
 
+  // eslint-disable-next-line class-methods-use-this
   passwordErrorMessageHandler(pass: string) {
-    console.log(this.isFormValid);
     let errorMessage = '';
     const message = "Your password isn't strong enough Hint: ";
     const regExSym = /[!@#$%^&*(),.?":{}|<>]/;
@@ -99,7 +99,6 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.status === 'INVALID') {
       this.isFormValid = false;
-      console.log(this.loginForm);
     } else {
       this.loginService.login(this.loginForm.value);
     }
