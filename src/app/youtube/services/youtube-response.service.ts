@@ -22,7 +22,7 @@ export class YoutubeResponseService {
 
   fetchvideos(name: string): Observable<any> {
     if (name.length >= 3) {
-      return this.http.get<any>(`search?&type=video&part=snippet&maxResults=2&q=${name}`).pipe(
+      return this.http.get<any>(`search?&type=video&part=snippet&maxResults=10&q=${name}`).pipe(
         map((videoResponse: any) => {
           const idList: string[] = videoResponse.items
             .map((item: any) => item.id.videoId);
