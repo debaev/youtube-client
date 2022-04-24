@@ -3,11 +3,15 @@
   <div class="icon">
     <mat-icon>account_circle</mat-icon>
   </div>
-  <button
-    class="logout__btn"
-    *ngIf="this.loginService.isLogged"
+  <button *ngIf="!isUserLogged"
     mat-button
-    (click)="this.loginService.logout()"
+    (click)="this.goToLoginPage()"
+  >
+    LogIn
+  </button>
+  <button *ngIf="isUserLogged"
+    mat-button
+    (click)="loginService.logout()"
   >
     Logout
   </button>

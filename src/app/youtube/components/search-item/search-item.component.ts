@@ -9,7 +9,7 @@ import { ISearchItem } from '../../models/search-item.model';
 })
 export default class SearchItemComponent {
   @Input()
-    allVideos!: ISearchItem[];
+    allVideos$!: ISearchItem[];
 
   constructor(public sortService: SortFilterService) { }
 }

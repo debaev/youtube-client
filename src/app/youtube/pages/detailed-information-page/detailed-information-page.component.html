@@ -5,8 +5,13 @@
         <mat-icon>arrow_back_ios</mat-icon>
       </button>
       <div class="detail__view col-6">
-        <img
+        <img *ngIf="videoDetail.snippet.thumbnails.maxres"
           src="{{ videoDetail.snippet.thumbnails.maxres.url }}"
+          alt=""
+          class="w-100"
+        />
+        <img *ngIf="!videoDetail.snippet.thumbnails.maxres"
+          src="{{ videoDetail.snippet.thumbnails.standard.url }}"
           alt=""
           class="w-100"
         />

@@ -1,11 +1,18 @@
-<form class="login-form" (ngSubmit)="onLogin()">
+<form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
   <h2>Login</h2>
   login
-  <input type="text" [(ngModel)]="user.login" name="login" />
-  <p style="color: red;" *ngIf="!user.login && errorMsg">The username field is empty.</p>
+  <input formControlName="username" type="text" />
+  <span class="error-msg" *ngIf="(loginForm.get('username')?.touched && !loginForm.get('username')?.value) || (!isFormValid && !loginForm.get('username')?.value)">Please enter a login email</span>
+  <span class="error-msg" *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.value">The login email is invalid</span>
   password
-  <input type="password" [(ngModel)]="user.pass" name="pass" />
-  <p style="color: red;" *ngIf="!user.pass && errorMsg">The password field is empty.</p>
+  <div class="pass_container">
+    <input class="w-100" formControlName="password" type="{{togglePasswordType()}}"/>
+    <button class="password-btn" type="button" (click)="togglePasswordVisibility()">
+      <mat-icon *ngIf="isPasswordHidden; else: passHide">visibility</mat-icon>
+      <ng-template #passHide><mat-icon>visibility_off</mat-icon></ng-template>
+    </button>
+  </div>
+  <span class="error-msg" *ngIf="(loginForm.get('password')?.touched && !loginForm.get('password')?.value) || (!isFormValid && !loginForm.get('password')?.value)">Please enter a password</span>
+  <span class="error-msg">{{passwordErrorMessageHandler(loginForm.get('password')?.value)}}</span>
   <button type="submit" mat-button>Login</button>
 </form>
-

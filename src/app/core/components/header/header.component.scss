@@ -32,7 +32,6 @@
     &-input {
       background: rgba(236, 236, 236, 0.535);
       height: 35px;
-      padding-left: 10px;
     }
   }
 
@@ -56,6 +55,11 @@
 
 .form-field {
   width: 350px;
+}
+
+.admin__page {
+  margin-left: 20px;
+  color: #bcbcbc;
 }
 
 .settings-btn {
