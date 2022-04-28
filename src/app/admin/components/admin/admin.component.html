@@ -26,6 +26,6 @@
   <span class="error-msg" *ngIf="(!isFormValid && !newCardForm.get('date')?.value)">Please enter a creation date</span>
   <span class="error-msg" *ngIf="newCardForm.get('date')?.value && newCardForm.get('date')?.errors">The date is invalid</span>
   
-  <button type="submit" mat-button>Login</button>
+  <button type="submit" mat-button>Create card</button>
   
 </form>
