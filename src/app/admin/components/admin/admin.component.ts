@@ -1,3 +1,4 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
@@ -7,6 +8,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { addCard } from 'src/app/redux/actions/videos.actions';
 
 @Component({
   selector: 'app-admin',
@@ -14,6 +16,8 @@ import {
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
+  constructor(private store: Store) {}
+
   newCardForm!: FormGroup;
 
   isFormValid = true;
@@ -64,7 +68,9 @@ export class AdminComponent implements OnInit {
     if (this.newCardForm.status === 'INVALID') {
       this.isFormValid = false;
     } else {
-      console.log('do smth');
+      this.store.dispatch(addCard(this.newCardForm.value));
+      alert('New card successfully added!');
+      this.newCardForm.reset();
     }
   }
 }
