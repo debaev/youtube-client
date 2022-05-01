@@ -5,9 +5,9 @@ import { initialVideoState } from '../state.models';
 
 export const videoReducer = createReducer(
   initialVideoState,
-  on(searchVideos, (state) => ({
+  on(searchVideos, (state, response) => ({
     ...state,
-    youtubeResponse: [],
+    youtubeResponse: response.loadedVideo,
   })),
   on(addCard, (state, newCard) => ({
     ...state,

@@ -69,8 +69,10 @@ export class AdminComponent implements OnInit {
       this.isFormValid = false;
     } else {
       this.store.dispatch(addCard(this.newCardForm.value));
+      // eslint-disable-next-line no-alert
       alert('New card successfully added!');
       this.newCardForm.reset();
+      this.isFormValid = true;
     }
   }
 }
