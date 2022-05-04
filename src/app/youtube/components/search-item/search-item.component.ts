@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Component } from '@angular/core';
 import SortFilterService from 'src/app/core/services/sort-filter.service';
-import { ISearchItem } from '../../models/search-item.model';
+import { youtubeVideoSelector } from 'src/app/redux/selectors/videos.selector';
 
 @Component({
   selector: 'app-search-item',
@@ -8,8 +9,10 @@ import { ISearchItem } from '../../models/search-item.model';
   styleUrls: ['./search-item.component.scss'],
 })
 export default class SearchItemComponent {
-  @Input()
-    allVideos$!: ISearchItem[];
+  allVideos$ = this.store.select(youtubeVideoSelector);
 
-  constructor(public sortService: SortFilterService) { }
+  constructor(
+    public sortService: SortFilterService,
+    private store: Store,
+  ) { }
 }
