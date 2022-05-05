@@ -57,4 +57,8 @@ export default class HeaderComponent {
   goToAdminPage() {
     this.route.navigate(['admin']);
   }
+
+  goToMainPage() {
+    this.route.navigate(['home']);
+  }
 }
