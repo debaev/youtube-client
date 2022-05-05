@@ -14,7 +14,7 @@ export default class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.youtubeResponseService.videos$.subscribe((res) => {
-      this.fetchedVideos = res.items;
+      this.fetchedVideos = res;
     });
   }
 }
