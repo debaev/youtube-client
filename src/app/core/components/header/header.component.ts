@@ -12,7 +12,7 @@ export default class HeaderComponent {
   constructor(
     public sortService: SortFilterService,
     private youtubeService: YoutubeResponseService,
-    private route: Router,
+    public route: Router,
   ) {}
 
   isSortBlockShown: boolean = false;

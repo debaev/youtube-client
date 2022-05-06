@@ -1,10 +1,15 @@
 <header class="header">
   <div class="header-container container">
     <div class="d-flex align-items-center">
-      <div class="logo">
-        <mat-icon>smart_display</mat-icon>
-      </div>
-      <button mat-button class="home-btn" (click)="goToMainPage()">Main page</button>
+      <ng-container *ngIf="!(route.url.slice(1,5) === 'main'); else adminPage">
+        <button mat-button class="home-btn" (click)="goToMainPage()">Main page</button>
+      </ng-container>
+      <ng-template #adminPage>
+        <div class="logo">
+          <mat-icon>smart_display</mat-icon>
+        </div>
+      </ng-template>
+      
       <form class="search-form">
         <mat-form-field class="form-field">
           <mat-label>Enter the title</mat-label>
