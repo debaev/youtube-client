@@ -7,15 +7,14 @@ import { IUser } from '../models/userModel';
   providedIn: 'root',
 })
 export class LoginService {
-  public isLogged$!: Observable<boolean>;
-
-  private isLogged$$ = new BehaviorSubject(false);
-  
-
   constructor(private router: Router) {
-    this.isLogged$ = this.isLogged$$.asObservable();
+    this.isLogged$ = this.loginSubject.asObservable();
     this.isUserLogged();
   }
+
+  public isLogged$!: Observable<boolean>;
+
+  public loginSubject = new BehaviorSubject(false);
 
   login(user: IUser) {
     localStorage.setItem('username', user.username);
@@ -24,8 +23,9 @@ export class LoginService {
     this.isUserLogged();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   getUsername() {
-    return localStorage.getItem('username') ?? 'Your Name'; 
+    return localStorage.getItem('username') ?? 'Your Name';
   }
 
   logout() {
@@ -38,9 +38,9 @@ export class LoginService {
   isUserLogged() {
     const user = localStorage.getItem('username') && localStorage.getItem('token');
     if (user) {
-      this.isLogged$$.next(true);
+      this.loginSubject.next(true);
     } else {
-      this.isLogged$$.next(false);
+      this.loginSubject.next(false);
     }
   }
 
