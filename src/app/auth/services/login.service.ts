@@ -10,32 +10,28 @@ export class LoginService {
   public isLogged$!: Observable<boolean>;
 
   private isLogged$$ = new BehaviorSubject(false);
+  
 
   constructor(private router: Router) {
     this.isLogged$ = this.isLogged$$.asObservable();
     this.isUserLogged();
-    this.setName();
   }
-
-  userName?: string | null;
 
   login(user: IUser) {
     localStorage.setItem('username', user.username);
     localStorage.setItem('token', user.password);
     this.navigateToMainPage();
-    this.userName = user.username;
     this.isUserLogged();
   }
 
-  setName() {
-    localStorage.getItem('username') ? this.userName = localStorage.getItem('username') : this.userName = 'Your Name';
+  getUsername() {
+    return localStorage.getItem('username') ?? 'Your Name'; 
   }
 
   logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('token');
     this.navigateToLoginPage();
-    this.userName = 'Your Name';
     this.isUserLogged();
   }
 
