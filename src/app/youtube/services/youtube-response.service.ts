@@ -1,10 +1,10 @@
-import { ISearchResponse } from 'src/app/youtube/models/search-response.model';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import {
   debounceTime, distinctUntilChanged, map, mergeMap, Observable, of, Subject, switchMap,
 } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ISearchResponse } from '../models/search-response.model';
 import { searchVideos } from '../../redux/actions/videos.actions';
 
 @Injectable({
@@ -16,11 +16,16 @@ export class YoutubeResponseService {
   constructor(
     private http: HttpClient,
     private store: Store,
-  ) {}
+  ) {
+    this.subscribe();
+  }
 
-  videos$ = this.queryValue.pipe(
-    this.liveSearch((res) => this.fetchvideos(res)),
-  );
+  subscribe() {
+    return this.queryValue.pipe(
+      this.liveSearch((res) => this.fetchvideos(res)),
+    ).subscribe((res: ISearchResponse) => this.store
+      .dispatch(searchVideos({ loadedVideo: res.items })));
+  }
 
   searchPosts(userId: string) {
     this.queryValue.next(userId);
@@ -34,9 +39,7 @@ export class YoutubeResponseService {
             .map((item: any) => item.id.videoId);
           return idList;
         }),
-        mergeMap((idList) => this.http.get<ISearchResponse>(`videos?&id=${idList.join(',')}&part=snippet,statistics`).pipe(
-          map((res) => this.store.dispatch(searchVideos({ loadedVideo: res.items }))),
-        )),
+        mergeMap((idList) => this.http.get<ISearchResponse>(`videos?&id=${idList.join(',')}&part=snippet,statistics`)),
       );
     }
     return of([]);

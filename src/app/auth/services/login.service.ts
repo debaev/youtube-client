@@ -13,9 +13,11 @@ export class LoginService {
 
   constructor(private router: Router) {
     this.isLogged$ = this.isLogged$$.asObservable();
+    this.isUserLogged();
+    this.setName();
   }
 
-  userName = 'Your Name';
+  userName?: string | null;
 
   login(user: IUser) {
     localStorage.setItem('username', user.username);
@@ -23,6 +25,10 @@ export class LoginService {
     this.navigateToMainPage();
     this.userName = user.username;
     this.isUserLogged();
+  }
+
+  setName() {
+    localStorage.getItem('username') ? this.userName = localStorage.getItem('username') : this.userName = 'Your Name';
   }
 
   logout() {
